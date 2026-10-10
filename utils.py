@@ -10,7 +10,7 @@ def main():
     # "Send" comand
     parser_upload = subparsers.add_parser('send', help="Send events in batches to Event Hubs")
     parser_upload.add_argument('--stream', required=True, type=str, help="Event Hub Namespace & Hub. Format namespace.hub")
-    parser_upload.add_argument('--samples', required=True, type=int, default=5, help="Samples quantity")
+    parser_upload.add_argument('--batches', required=True, type=int, default=5, help="Samples quantity")
 
     # "Receive" command
     parser_receive = subparsers.add_parser('receive', help="Receive and read events from Event Hubs one by one")
@@ -26,7 +26,7 @@ def main():
         asyncio.run(send(
             namespace=namespace,
             hub=hub,
-            samples=args.samples
+            batches=args.batches
         ))
     elif args.command == 'receive':
         asyncio.run(receive(
