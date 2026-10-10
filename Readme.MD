@@ -27,7 +27,7 @@ pip install -r requirements.txt
 
 ### 2. Running the Commands
 
-The tool is invoked via `utils_2.py` using two main commands:
+The tool is invoked via `utils.py` using two main commands:
 
 #### A. Send Events in Parallel Batches (`send`)
 Sends multiple batches of mock records in parallel to the Event Hub, randomizing the size of each batch and displaying metrics upon completion.
